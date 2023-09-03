@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <h5 [ngClass]="{ small: !detailsKey }">
+      {{ messageKey | translate: messageInterpolateParams }}
+    </h5>
+    <div
+      *ngIf="detailsKey"
+      class="details"
+      [innerHTML]="detailsKey | translate: detailsInterpolateParams"></div>
+  </div>
+  <button mat-icon-button (click)="close()">
+    <mat-icon>cancel</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,56 @@
+<div fxLayout="column" fxLayoutAlign="space-between center">
+  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="24px">
+    <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="24px">
+      <span class="registration-header">{{ 'AUTHENTICATION.REGISTRATION' | translate }}</span>
+      <span class="registration-step">{{ 'PARTNER.AUTHENTICATION_DATA' | translate }}</span>
+    </div>
+    <form [formGroup]="securityDataFg">
+      <app-input
+        appearance="outline"
+        label="AUTHENTICATION.USERNAME"
+        formControlName="username"
+        required
+        [errorMsgConfig]="{
+          dataInvalid: 'VALIDATION.USERNAME_ALREADY_TAKEN',
+          pattern: 'VALIDATION.USERNAME_FORMAT'
+        }">
+      </app-input>
+      <app-input
+        appearance="outline"
+        label="AUTHENTICATION.PASSWORD"
+        formControlName="password"
+        type="password"
+        required
+        [errorMsgConfig]="{
+          pattern: 'VALIDATION.PASSWORD_FORMAT'
+        }">
+      </app-input>
+      <mat-form-field appearance="outline" fxFill>
+        <mat-label>{{ 'AUTHENTICATION.CONFIRM_PASSWORD' | translate }}</mat-label>
+        <input
+          matInput
+          required
+          type="password"
+          formControlName="confirmPassword"
+          [errorStateMatcher]="parentErrorMatcher" />
+        <mat-error *ngIf="securityDataFg.get('confirmPassword')?.hasError('required')">{{
+          'VALIDATION.REQUIRED' | translate
+        }}</mat-error>
+        <mat-error *ngIf="securityDataFg.get('confirmPassword')?.hasError('pattern')">{{
+          'VALIDATION.PASSWORD_FORMAT' | translate
+        }}</mat-error>
+        <mat-error *ngIf="securityDataFg.hasError('confirmInvalid')">{{
+          'VALIDATION.PASSWORD_CONFIRM' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <app-select
+        *ngxPermissionsOnly="[Right.ADMIN_PARTNER_CREATE]"
+        appearance="outline"
+        formControlName="partnerType"
+        label="PARTNER.PARTNER_TYPE"
+        [dataSource]="PartnerType | enumToSelectOptions: 'ENUM.PARTNER_TYPE.':filterFn"
+        [required]="true">
+      </app-select>
+    </form>
+  </div>
+</div>

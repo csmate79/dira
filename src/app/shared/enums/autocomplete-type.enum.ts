@@ -1,0 +1,6 @@
+export enum AutocompleteTypeEnum {
+  INFOTYPE_SUBCAT = 'INFOTYPE_SUBCAT',
+  MAINCAT = 'MAINCAT',
+  CATEGORY_PARENT = 'CATEGORY_PARENT',
+  DEFAULT = 'DEFAULT',
+}

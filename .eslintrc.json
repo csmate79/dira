@@ -1,0 +1,28 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": ["@inno/eslint-config-angular/base"],
+      "rules": {
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "prefer-destructuring": "off",
+        "prefer-template": "off"
+      },
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["@inno/eslint-config-angular/template"],
+      "rules": {
+        "@angular-eslint/template/button-has-type": "off",
+        "@angular-eslint/template/attributes-order": "off",
+        "@angular-eslint/template/no-inline-styles": "off",
+        "@angular-eslint/template/accessibility-interactive-supports-focus": "warn"
+      }
+    }
+  ]
+}

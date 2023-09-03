@@ -1,0 +1,51 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+  <div
+    class="auth-container login-card mat-elevation-z8"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+    <form [formGroup]="loginForm" fxLayout="column" fxLayoutGap="24px">
+      <div fxLayout="row" fxLayoutAlign="center">
+        <mat-icon class="icon">bar_chart</mat-icon>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center">
+        <span class="header">{{ 'AUTHENTICATION.LOGIN_HEADER' | translate }}</span>
+      </div>
+      <div>
+        <app-input
+          appearance="outline"
+          label="AUTHENTICATION.USERNAME"
+          formControlName="username"
+          type="text"
+          required>
+        </app-input>
+        <app-input
+          appearance="outline"
+          label="AUTHENTICATION.PASSWORD"
+          formControlName="password"
+          type="password"
+          required>
+        </app-input>
+        <div fxLayout="column" fxLayoutGap="24px" fxFill>
+          <button mat-flat-button class="m3-button" color="primary" (click)="onLogin()">
+            {{ 'AUTHENTICATION.LOGIN' | translate }}
+          </button>
+          <button mat-flat-button class="m3-button" color="accent" routerLink="registration">
+            {{ 'AUTHENTICATION.REGISTRATION' | translate }}
+          </button>
+          <button mat-stroked-button class="m3-button" (click)="navigateToForgottenPassword()">
+            {{ 'AUTHENTICATION.FORGOTTEN_PASSWORD' | translate }}
+          </button>
+          <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="6px">
+            <mat-icon>language</mat-icon>
+            <button mat-button (click)="changeLanguage(LanguageEnum.HUN)">
+              {{ LanguageEnum.HUN.toUpperCase() }}
+            </button>
+            <button mat-button (click)="changeLanguage(LanguageEnum.ENG)">
+              {{ LanguageEnum.ENG.toUpperCase() }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

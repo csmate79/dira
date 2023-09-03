@@ -1,0 +1,4 @@
+{
+  "*.{ts,html}": ["ng-lint-staged lint --"],
+  "*.{js,ts,html,scss,md,yml,json}": ["npx prettier --list-different"]
+}

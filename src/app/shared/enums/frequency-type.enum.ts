@@ -1,0 +1,8 @@
+export enum FrequencyType {
+  DAILY = 'DAILY',
+  WEEKLY = 'WEEKLY',
+  MONTHLY = 'MONTHLY',
+  SEMI_ANNUALLY = 'SEMI_ANNUALLY',
+  ANNUALLY = 'ANNUALLY',
+  QUARTERLY = 'QUARTERLY',
+}

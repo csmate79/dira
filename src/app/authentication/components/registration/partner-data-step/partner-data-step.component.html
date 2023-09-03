@@ -1,0 +1,118 @@
+<div fxLayout="column" fxLayoutAlign="space-between center">
+  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="24px">
+    <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="24px">
+      <span class="registration-header">{{ 'AUTHENTICATION.REGISTRATION' | translate }}</span>
+      <span class="registration-step">{{
+        'PARTNER.PARTNER_DATA'
+          | translate: { partnerType: 'ENUM.PARTNER_TYPE.' + partnerType | translate }
+      }}</span>
+    </div>
+    <form [formGroup]="partnerDataFg">
+      <!--Általános/Üzleti felhasználó-->
+      <ng-container *ngIf="partnerType !== PartnerTypeEnum.COMPANY">
+        <app-autocomplete
+          *ngIf="isBusinessPartner"
+          appearance="outline"
+          [autocompleteFunction]="companyAutocompleteFunction"
+          label="PARTNER.COMPANY"
+          formControlName="company"
+          [getObject]="true"
+          [needFetch]="true"
+          required>
+        </app-autocomplete>
+        <app-select
+          formControlName="title"
+          appearance="outline"
+          label="PARTNER.TITLE"
+          [dataSource]="TitleEnum | enumToSelectOptions: 'ENUM.PARTNER_TITLE.'">
+        </app-select>
+        <app-input
+          appearance="outline"
+          label="PARTNER.LAST_NAME"
+          formControlName="lastName"
+          [required]="true"
+          [errorMsgConfig]="{ pattern: 'VALIDATION.LAST_NAME_FORMAT' }"
+          [maxLength]="25">
+        </app-input>
+        <app-input
+          appearance="outline"
+          label="PARTNER.FIRST_NAME"
+          formControlName="firstName"
+          [required]="true"
+          [errorMsgConfig]="{ pattern: 'VALIDATION.FIRST_NAME_FORMAT' }"
+          [maxLength]="25">
+        </app-input>
+      </ng-container>
+      <!--Cég-->
+      <ng-container *ngIf="partnerType === PartnerTypeEnum.COMPANY">
+        <app-input
+          appearance="outline"
+          label="COMPANY.NAME"
+          formControlName="name"
+          type="text"
+          [required]="true"
+          [maxLength]="150"
+          [errorMsgConfig]="{
+            pattern: 'VALIDATION.COMPANY_NAME_FORMAT',
+            dataInvalid: 'VALIDATION.USERNAME_ALREADY_TAKEN'
+          }">
+        </app-input>
+      </ng-container>
+      <app-input
+        appearance="outline"
+        label="PARTNER.EMAIL"
+        formControlName="email"
+        type="text"
+        [required]="true"
+        [errorMsgConfig]="{
+          pattern: 'VALIDATION.EMAIL_FORMAT',
+          dataInvalid: 'VALIDATION.EMAIL_ALREADY_TAKEN'
+        }"
+        [maxLength]="100">
+      </app-input>
+      <app-input
+        appearance="outline"
+        label="PARTNER.PHONE_NUMBER"
+        formControlName="phoneNumber"
+        type="text"
+        [errorMsgConfig]="{ pattern: 'VALIDATION.PHONE_NUMBER_FORMAT' }"
+        [maxLength]="40">
+      </app-input>
+      <app-select
+        *ngIf="partnerType !== PartnerTypeEnum.COMPANY"
+        formControlName="language"
+        appearance="outline"
+        label="PARTNER.LANGUAGE"
+        [required]="true"
+        [dataSource]="LanguageEnum | enumToSelectOptions: 'ENUM.LANGUAGES.'">
+      </app-select>
+      <ng-container *ngIf="partnerType === PartnerTypeEnum.COMPANY">
+        <app-select
+          formControlName="companyType"
+          appearance="outline"
+          label="COMPANY.TYPE"
+          [dataSource]="CompanyTypeEnum | enumToSelectOptions: 'ENUM.COMPANY_TYPE.'"
+          [required]="true">
+        </app-select>
+      </ng-container>
+      <ng-container
+        *ngIf="
+          (partnerType === PartnerTypeEnum.COMPANY && partnerDataFg.get('companyType')?.value) ||
+          partnerType === PartnerTypeEnum.PRIVATE_CUSTOMER
+        ">
+        <mat-divider></mat-divider>
+        <h4 class="no-margin-bottom">
+          {{ 'PARTNER.USAGE_TYPE' | translate }}{{ 'COMMON.REQUIRED_STAR' | translate }}
+        </h4>
+        <mat-selection-list formControlName="usageTypes">
+          <mat-list-option
+            *ngFor="let usageType of allUsageTypeForPartner$ | async"
+            color="primary"
+            [value]="usageType">
+            {{ 'ENUM.USAGE_TYPE.' + usageType.name | translate }}
+          </mat-list-option>
+        </mat-selection-list>
+      </ng-container>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "instructors": [
+        { "id": 1, "name": "János", "score": 3.8, "location": "Debrecen", "totalReviews": 7 },
+        { "id": 2, "name": "Géza", "score": 3.9, "location": "Debrecen", "totalReviews": 21 },
+        { "id": 3, "name": "Béla", "score": 3, "location": "Debrecen", "totalReviews": 12 },
+        { "id": 4, "name": "Yo", "score": 4.7, "location": "Debrecen", "totalReviews": 34 },
+        { "id": 5, "name": "Levi", "score": 2.3, "location": "Debrecen", "totalReviews": 8 },
+        { "id": 6, "name": "Máté", "score": 4.1, "location": "Debrecen", "totalReviews": 78 },
+        { "id": 7, "name": "Pál", "score": 2.3, "location": "Debrecen", "totalReviews": 23 },
+        { "id": 8, "name": "Czár", "score": 3.5, "location": "Debrecen", "totalReviews": 5 }
+    ]
+}
