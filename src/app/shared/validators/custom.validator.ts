@@ -1,5 +1,3 @@
-import { UntypedFormControl } from '@angular/forms';
-import { IFile } from '../../information-unit/interfaces/file.interface';
 
 const HUNGARIAN_LETTERS = 'áéíóöőúüűÁÉÍÓÖŐÚÜŰ';
 
@@ -53,13 +51,3 @@ export const percentRegex = '^[1-9][0-9]?$|^100$|^0$';
  * nagybetűk, ' . - , karakterek, space engedélyezett, legalább 0, maximum 30 karakter
  */
 export const notificaionNameRegex = `^[a-zA-Z${HUNGARIAN_LETTERS}0-9'.-\\s,]{0,30}$`;
-
-/**
- * Fájl méret validátor
- *
- * @param maxSize Maximum mérete megabyte mértékegységben
- */
-export const fileLengthValidator = (maxSize: number) => (control: UntypedFormControl) => {
-  const value = control.value as IFile;
-  return value?.fileSize && value.fileSize > maxSize * 1000000 ? { maxSize } : null;
-};
