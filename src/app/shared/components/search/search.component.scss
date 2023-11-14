@@ -1,0 +1,22 @@
+h1 {
+    font-weight: 900;
+    color: rgb(199, 199, 199);
+}
+
+form {
+    justify-content: space-between;
+    gap: 10px;
+    app-input {
+        flex: 1;
+    }
+}
+
+.button-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+::ng-deep mat-label {
+    font-weight: 900 !important;
+    color: #d8d6d6 !important;
+}

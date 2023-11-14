@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 // RESET CSS
 
 html,
@@ -7,13 +9,6 @@ span,
 applet,
 object,
 iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
 blockquote,
 pre,
 a,
@@ -125,12 +120,52 @@ table {
     border-spacing: 0;
 }
 
+a {
+    text-decoration: none;
+}
 // RESET CSS
 
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+// FLEX OPTIONS
 
 .flex-row {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// FLEX OPTIONS
+
+button {
+    font-weight: 900 !important;
+    font-size: 12px !important;
+}
+
+.card {
+    background-color: #f6f6f6;
+    display: flex;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px -5px rgba(0, 0, 0, 0.19);
+}
+
+.slick-arrow::before {
+    color: #673ab7 !important;
+}
+
+// CUSTOM CLASSES
+
+.full-width {
+    width: 100% !important;
 }

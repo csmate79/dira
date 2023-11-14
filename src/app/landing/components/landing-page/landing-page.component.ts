@@ -39,24 +39,8 @@ export class LandingPageComponent implements OnInit {
     ngOnInit(): void {
     }
 
-
-    public navigateToDetails(): void {
-        this.router.navigate([ModuleUrlEnum.INFORMATION_UNIT]);
-    }
-
-    public navigateToHistory(): void {
-        this.router.navigate([ModuleUrlEnum.CUSTOMER_PROFILE]);
-    }
-
-    public navigateToInformationType(): void {
-        this.router.navigate([ModuleUrlEnum.INFORMATION_TYPE]);
-    }
-
-    public navigateToRatings(): void {
-        this.router.navigate([ModuleUrlEnum.RATING]);
-    }
-
-    public navigateToNotifications(): void {
-        this.router.navigate([ModuleUrlEnum.NOTIFICATION]);
+    public navigateToInstructorCreation(): void {
+        console.log('asdasd');
+        this.router.navigate([ModuleUrlEnum.CREATE_NEW_INSTRUCTOR]);
     }
 }

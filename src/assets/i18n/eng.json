@@ -1,0 +1,58 @@
+{
+    "COMMON": {
+        "ARROW_LEFT": "<",
+        "ARROW_RIGHT": ">",
+        "ATTACHED_MEDIA_FILES": "Attached media files",
+        "BROWSE": "Browse",
+        "MEDIA_FILES": "Media files",
+        "CHOOSE": "Choose",
+        "CHOOSE_MANUALLY": "Choose manually",
+        "BACK": "Back",
+        "NEXT": "Next",
+        "SHOW": "Show",
+        "EDIT": "Edit",
+        "SHOW_EDIT": "Show/Edit",
+        "DELETE": "Delete",
+        "RESET": "Reset",
+        "SAVE": "Save",
+        "UPDATE": "Update",
+        "SEND": "Send",
+        "CONFIRM_SAVE": "Are you sure you want to save changes?",
+        "CONFIRM_DELETE_TITLE": "Delete",
+        "CONFIRM_DELETE_CONTENTKEY": "Are you sure you want to delete the element?",
+        "CONFIRM_DELETE_CONTENTKEY_CHOOSEN": "Are you sure you want to delete the selected element?",
+        "CONFIRM_DELETE_CONTENTKEY_WANT_TO": "Are you sure to delete the selected item?",
+        "CONFIRM_BACK_TITLE": "Back",
+        "CONFIRM_BACK_CONTENTKEY": "Are you sure you want to go back without saving? All unsaved changes will be lost.",
+        "YES": "Yes",
+        "NO": "No",
+        "CLEAR_FILTERS": "Clear filters",
+        "FILTER": "Filter",
+        "NO_RESULTS": "No results.",
+        "LOGOUT": "Logout",
+        "PASSWORD_CHANGE": "Password change",
+        "BACK_TO_LOGIN": "Back to login",
+        "STATUS": "Status",
+        "NOT_DEFINED": "Not defined",
+        "SETTINGS": "Settings",
+        "FIND_GPS_POSITION": "Find GPS position",
+        "GET_GPS_POSITION": "Request GPS position",
+        "SCAN_GPS": "Scan GPS",
+        "DELETE_GPS_POSITION": "Delete GPS position",
+        "EDIT_COORDINATES": "Edit coordinates",
+        "BACK_FAILED": "Back action failed!",
+        "OK": "Ok",
+        "NAME": "Name",
+        "ID": "Id",
+        "CANCEL": "Cancel",
+        "NO_RIGHT": "No proper authorization",
+        "ERROR": {
+            "TITLE": {
+                "NOT_FOUND": "Page not found!"
+            }
+        }
+    },
+    "INSTRUCTOR": {
+        "NEW_INSTRUCTOR": "+ NEW INSTRUCTOR"
+    }
+}

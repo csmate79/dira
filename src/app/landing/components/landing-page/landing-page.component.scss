@@ -1,8 +1,6 @@
-.info-numbers-panel {
-  width: 100%;
-  padding-top: 32px;
-}
-
-.info-number-section {
-  border-radius: 10px;
+.landing {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    gap: 1em;
 }

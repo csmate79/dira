@@ -1,4 +1,4 @@
 export interface ISelectDataSource {
-  value?: string;
-  content?: string;
+    value: string;
+    content: string;
 }

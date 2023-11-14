@@ -1,0 +1,48 @@
+<mat-form-field [appearance]="appearance">
+    <mat-label>{{ label | translate }}</mat-label>
+    <input
+        matInput
+        [errorStateMatcher]="errorStateMatcher"
+        [type]="type"
+        [maxLength]="getMaximumLength()"
+        [required]="_required"
+        [formControl]="control"
+        (blur)="onBlur()" />
+    <mat-icon *ngIf="suffixIcon" matSuffix>{{ suffixIcon }}</mat-icon>
+    <mat-hint *ngIf="maxLength">{{
+        'VALIDATION.MAX_LENGTH' | translate : { value: maxLength }
+    }}</mat-hint>
+    <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    <ng-container *ngIf="!disableDefaultErrorMessages" ngProjectAs="mat-error">
+        <mat-error
+            *ngIf="!hasErrorDefinition('required') && ngControl?.control?.hasError('required')"
+            >{{ 'VALIDATION.REQUIRED' | translate }}</mat-error
+        >
+        <mat-error
+            *ngIf="!hasErrorDefinition('minlength') && ngControl?.control?.hasError('minlength')">
+            {{
+                'VALIDATION.MIN_LENGTH'
+                    | translate : { value: this.ngControl.getError('minlength').requiredLength }
+            }}
+        </mat-error>
+        <mat-error
+            *ngIf="!hasErrorDefinition('maxlength') && ngControl?.control?.hasError('maxlength')">
+            {{
+                'VALIDATION.MAX_LENGTH'
+                    | translate : { value: this.ngControl.getError('maxlength').requiredLength }
+            }}
+        </mat-error>
+        <mat-error
+            *ngIf="!hasErrorDefinition('pattern') && ngControl?.control?.hasError('pattern')">
+            {{ 'VALIDATION.BASE_PATTERN' | translate }}
+        </mat-error>
+    </ng-container>
+    <ng-container *ngFor="let error of errors" ngProjectAs="mat-error">
+        <mat-error *ngIf="ngControl?.hasError(error.error)">
+            {{ error.message | translate : error.interpolateParams }}
+        </mat-error>
+    </ng-container>
+    <ng-container ngProjectAs="mat-error">
+        <ng-content select="app-errors"></ng-content>
+    </ng-container>
+</mat-form-field>

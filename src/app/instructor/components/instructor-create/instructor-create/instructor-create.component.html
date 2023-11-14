@@ -1,0 +1,60 @@
+<div>
+    <form [formGroup]="instructorForm">
+        <app-input
+            label="INSTRUCTOR.DATA.NAME"
+            formControlName="name"
+            type="text"
+            required
+            [errorMsgConfig]="{
+                pattern: 'VALIDATION.EMAIL_FORMAT',
+                nameExist: 'VALIDATION.EMAIL_ALREADY_TAKEN'
+            }">
+        </app-input>
+        <app-input
+            label="INSTRUCTOR.DATA.CAR"
+            formControlName="car"
+            type="text"
+            required
+            [errorMsgConfig]="{
+                pattern: 'VALIDATION.USERNAME',
+                nameExist: 'VALIDATION.USERNAME_ALREADY_TAKEN'
+            }">
+        </app-input>
+        <app-select
+            formControlName="ageGroup"
+            label="INSTRUCTOR.DATA.AGE_GROUP"
+            [dataSource]="AgeGroupEnum | enumToSelectOptions : 'INSTRUCTOR.AGE.'">
+        </app-select>
+        <app-select
+            formControlName="fuelType"
+            label="INSTRUCTOR.DATA.FUEL_TYPE"
+            [dataSource]="
+                InstructorCarTypeEnum | enumToSelectOptions : 'INSTRUCTOR.CAR.FUEL_TYPE.'
+            ">
+        </app-select>
+        <app-input
+            label="INSTRUCTOR.DATA.LOCATION"
+            formControlName="location"
+            type="text"
+            required
+            [errorMsgConfig]="{
+                pattern: 'VALIDATION.USERNAME',
+                nameExist: 'VALIDATION.USERNAME_ALREADY_TAKEN'
+            }">
+        </app-input>
+        <app-input
+            label="INSTRUCTOR.DATA.SCHOOL"
+            formControlName="school"
+            type="text"
+            required
+            [errorMsgConfig]="{
+                pattern: 'VALIDATION.USERNAME',
+                nameExist: 'VALIDATION.USERNAME_ALREADY_TAKEN'
+            }">
+        </app-input>
+    </form>
+    <app-button
+        title="COMMON.SAVE"
+        [disabled]="!instructorForm.valid"
+        (click)="saveInstructor()"></app-button>
+</div>

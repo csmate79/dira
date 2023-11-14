@@ -1,0 +1,111 @@
+{
+    "COMMON": {
+        "ARROW_LEFT": "<",
+        "ARROW_RIGHT": ">",
+        "ATTACHED_MEDIA_FILES": "Csatolt fényképek listája",
+        "BROWSE": "Tallózás",
+        "MEDIA_FILES": "Média állományok",
+        "CHOOSE": "Kiválaszt",
+        "CHOOSE_MANUALLY": "Manuális kiválasztás",
+        "BACK": "Vissza",
+        "NEXT": "Következő",
+        "SHOW": "Megtekintés",
+        "EDIT": "Szerkesztés",
+        "SHOW_EDIT": "Megtekintés/Szerkesztés",
+        "DELETE": "Törlés",
+        "RESET": "Visszaállítás",
+        "SAVE": "Mentés",
+        "UPDATE": "Módosítás",
+        "SEND": "Küldés",
+        "CONFIRM_SAVE": "Biztosan menti a változtatásokat?",
+        "CONFIRM_DELETE_TITLE": "Törlés",
+        "CONFIRM_DELETE_CONTENTKEY": "Biztosan törölni szeretné az elemet?",
+        "CONFIRM_DELETE_CONTENTKEY_CHOOSEN": "Biztosan törli a kiválasztott elemet?",
+        "CONFIRM_DELETE_CONTENTKEY_WANT_TO": "Biztosan törölni szeretné az elemet?",
+        "CONFIRM_BACK_TITLE": "Visszalépés",
+        "CONFIRM_BACK_CONTENTKEY": "Biztosan mentés nélkül lép vissza? Ebben az esetben az összes nem mentett adat elvész.",
+        "YES": "Igen",
+        "NO": "Nem",
+        "CLEAR_FILTERS": "Szűrők törlése",
+        "FILTER": "Szűrés",
+        "NO_RESULTS": "Nincs megjelenítendő adat.",
+        "LOGOUT": "Kijelentkezés",
+        "PASSWORD_CHANGE": "Jelszóváltoztatás",
+        "BACK_TO_LOGIN": "Vissza a bejelentkezéshez",
+        "STATUS": "Státusz",
+        "NOT_DEFINED": "Nem meghatározott",
+        "SETTINGS": "Beállítások",
+        "FIND_GPS_POSITION": "GPS koordináta beolvasása",
+        "GET_GPS_POSITION": "GPS pozíció lekérdezése",
+        "SCAN_GPS": "GPS beolvasása",
+        "DELETE_GPS_POSITION": "GPS adatok törlése",
+        "EDIT_COORDINATES": "Koordináták szerkesztése",
+        "BACK_FAILED": "Vissza művelet végrhajtása sikertelen!",
+        "OK": "Ok",
+        "NAME": "Név",
+        "ID": "Azonosító",
+        "CANCEL": "Mégse",
+        "NO_RIGHT": "Nincs megfelelő jogosultság",
+        "ERROR": {
+            "TITLE": {
+                "NOT_FOUND": "A keresett oldal nem található!"
+            }
+        }
+    },
+    "INSTRUCTOR": {
+        "DATA": {
+            "NAME": "Név",
+            "CAR": "Autó",
+            "AGE_GROUP": "Korosztály",
+            "FUEL_TYPE": "Üzemanyag típus",
+            "LOCATION": "Helyszín",
+            "SCHOOL": "Iskola"
+        },
+        "NEW_INSTRUCTOR": "+ ÚJ OKTATÓ FELVÉTELE",
+        "AGE": {
+            "OLD": "Idős",
+            "YOUNG": "Fiatal"
+        },
+        "CAR": {
+            "FUEL_TYPE": {
+                "GASOLINE": "Benzin",
+                "DIESEL": "Dízel",
+                "ELECTRIC": "Elektromos"
+            }
+        }
+    },
+    "VALIDATION": {
+        "BASE_PATTERN": "Nem megfelelő formátum",
+        "REQUIRED": "Kötelező mező",
+        "MAX_LENGTH": "Maximum {{value}} karakter",
+        "MIN_LENGTH": "Minimum {{value}} karakter",
+        "MIN": "Minimum érték: {{value}}",
+        "MAX": "Maximum érték: {{value}}",
+        "EMAIL_FORMAT": "Az e-mail cím hibás formátumban van",
+        "EMAIL_ALREADY_TAKEN": "Ez az e-mail cím már használatban van",
+        "PASSWORD_FORMAT": "Hibás jelszó formátum! A jelszónak tartalmaznia kell legalább 1 kisbetűt, 1 nagybetűt, 1 számjegyet, nem lehet benne speciális karakter és legalább 6, de legfeljebb 20 karaktert tartalmazhat!",
+        "PASSWORD_CONFIRM": "A jelszavak nem egyeznek!",
+        "NAME_FORMAT": "A megadott név helytelen formátumban van. A magyar abc kis és nagy betűit, számokat, illetve a következő - idézőjelek közötti - speciális karaktereket: \" .,-'\" tartalmazhatja!",
+        "FIRST_NAME_FORMAT": "A keresztnév csak betűket, szóközt és a [.-'] karaktereket tartalmazhatja!",
+        "LAST_NAME_FORMAT": "A vezetéknév csak betűket, szóközt és a [.-'] karaktereket tartalmazhatja!",
+        "PHONE_NUMBER_FORMAT": "A telefonszám helyes formátuma: +36 (12) 123 4567",
+        "USERNAME": "A felhasználónév minimum 6, maximum 32 karakter hosszú lehet, továbbá az angol abc kis és nagy betűit, számokat, illetve a következő - idézőjelek közötti - speciális karaktereket: \"._-\" tartalmazhatja!",
+        "USERNAME_ALREADY_TAKEN": "Ez a felhasználónév már használatban van",
+        "NOT_VALID_COORDINATE": "Helytelen koordináta",
+        "ONLY_DECIMAL_POINT_NUMBERS": "Csak tizedestört számok",
+        "DECIMAL_TOO_LONG": "Maximum {{value}} tizedesjegy",
+        "MAX_VALUE": "Maximum {{value}}",
+        "ONLY_INTEGER_NUMBERS": "Csak egész számok",
+        "ONLY_POSITIVE_NUMBERS": "Csak pozitív számok",
+        "ONLY_POSITIVE_WHOLE_NUMBERS": "Csak pozitív, egész számok",
+        "ONLY_NUMBERS": "Csak számokat tartalmazhat",
+        "WRONG_COORDINATE": "Helytelen koordináta",
+        "SPEC_KEYBOARD": "Csak a speciális billentyűzeten szereplő karakterek írhatók a mezőbe",
+        "DECIMAL_AND_WHOLE_NUMBER_ONLY": "Csak egész és tizedestört számok írhatók a mezőbe",
+        "NAME_EXIST": {
+            "STATUS_SURVEY": "Már létezik felmérés ezzel a névvel. Adjon meg eltérő megnevezést!",
+            "STRUCTURE_CATEGORY": "Már létezik kategória ezzel a névvel. Adjon meg eltérő megnevezést!"
+        },
+        "POSITIVE_GREATER_THAN_ZERO": "Csak nullánál nagyobb egész számok"
+    }
+}

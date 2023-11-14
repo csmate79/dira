@@ -9,94 +9,94 @@ import { ISecurityUser } from '../interfaces/security-user.interface';
 import { IToken } from '../interfaces/token.interface';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class AuthenticationStateController implements OnDestroy {
-  public user$ = new BehaviorSubject<ISecurityUser | null>(null);
+    public user$ = new BehaviorSubject<ISecurityUser | null>(null);
 
-  public isLoggedIn$ = new BehaviorSubject<boolean | null>(null);
+    public isLoggedIn$ = new BehaviorSubject<boolean | null>(null);
 
-  private tokenRefresh$ = new Subject<void>();
+    private tokenRefresh$ = new Subject<void>();
 
-  private userActive$ = new Subject<void>();
+    private userActive$ = new Subject<void>();
 
-  private clickTimerSubscription!: Subscription;
+    private clickTimerSubscription!: Subscription;
 
-  private _sessionTokenKey = 'sessionToken';
+    private _sessionTokenKey = 'sessionToken';
 
-  private _sessionTokenExpirationDateKey = 'sessionTokenExpirationTime';
+    private _sessionTokenExpirationDateKey = 'sessionTokenExpirationTime';
 
-  private _loginNameKey = 'login';
+    private _loginNameKey = 'login';
 
-  constructor(private permissionService: NgxPermissionsService) {
-    this.initTimer();
-  }
-
-  ngOnDestroy(): void {
-    this.clickTimerSubscription?.unsubscribe();
-  }
-
-  /**
-   * Tevékenységre a bejelentkezési időzítő frissítése
-   */
-  public doAction(): void {
-    this.userActive$.next();
-  }
-
-  private initTimer(): void {
-    this.clickTimerSubscription?.unsubscribe();
-    this.clickTimerSubscription = this.userActive$
-      .pipe(
-        filter(() => !!this.user$.getValue()),
-        startWith(''),
-        throttleTime(throttleTimeMs.refresh),
-        skip(1),
-        tap(() => this.tokenRefresh$.next()),
-      )
-      .subscribe();
-  }
-
-  public getSessionToken(): string {
-    return localStorage.getItem(this._sessionTokenKey) ?? '';
-  }
-
-  public getLoginName(): string {
-    return localStorage.getItem(this._loginNameKey) ?? '';
-  }
-
-  public setUser(user: ISecurityUser): void {
-    localStorage.setItem(this._loginNameKey, user.userName);
-    let permissions;
-    if (user.partnerGroupIds.includes(Role.SUPERADMIN_GROUP)) {
-      permissions = Object.values(Right) as Right[];
-    } else {
-      permissions = [...user.partnerPermissionIds];
+    constructor(private permissionService: NgxPermissionsService) {
+        this.initTimer();
     }
-    this.permissionService.loadPermissions(permissions);
-    this.isLoggedIn$.next(true);
-    this.user$.next(user);
-  }
 
-  public setTokenData(tokenData: IToken): void {
-    localStorage.setItem(this._sessionTokenKey, tokenData.sessionToken);
-    localStorage.setItem(this._sessionTokenExpirationDateKey, tokenData.sessionTokenExpirationDate);
-    this.initTimer();
-  }
+    ngOnDestroy(): void {
+        this.clickTimerSubscription?.unsubscribe();
+    }
 
-  public clearUser(): void {
-    localStorage.removeItem(this._sessionTokenKey);
-    localStorage.removeItem(this._sessionTokenExpirationDateKey);
-    localStorage.removeItem(this._loginNameKey);
-    this.permissionService.flushPermissions();
-    this.user$.next(null);
-    this.isLoggedIn$.next(null);
-  }
+    /**
+     * Tevékenységre a bejelentkezési időzítő frissítése
+     */
+    public doAction(): void {
+        this.userActive$.next();
+    }
 
-  public refreshSession(): Observable<void> {
-    return this.tokenRefresh$.asObservable();
-  }
+    private initTimer(): void {
+        this.clickTimerSubscription?.unsubscribe();
+        this.clickTimerSubscription = this.userActive$
+            .pipe(
+                filter(() => !!this.user$.getValue()),
+                startWith(''),
+                throttleTime(throttleTimeMs.refresh),
+                skip(1),
+                tap(() => this.tokenRefresh$.next()),
+            )
+            .subscribe();
+    }
 
-  public getUserAsObservable(): Observable<ISecurityUser | null> {
-    return this.user$.asObservable();
-  }
+    public getSessionToken(): string {
+        return localStorage.getItem(this._sessionTokenKey) ?? '';
+    }
+
+    public getLoginName(): string {
+        return localStorage.getItem(this._loginNameKey) ?? '';
+    }
+
+    public setUser(user: ISecurityUser): void {
+        // localStorage.setItem(this._loginNameKey, user.userName);
+        let permissions;
+        if (user.partnerGroupIds.includes(Role.SUPERADMIN_GROUP)) {
+            permissions = Object.values(Right) as Right[];
+        } else {
+            permissions = [...user.partnerPermissionIds];
+        }
+        this.permissionService.loadPermissions(permissions);
+        this.isLoggedIn$.next(true);
+        this.user$.next(user);
+    }
+
+    public setTokenData(tokenData: IToken): void {
+        localStorage.setItem(this._sessionTokenKey, tokenData.sessionToken);
+        localStorage.setItem(this._sessionTokenExpirationDateKey, tokenData.sessionTokenExpirationDate);
+        this.initTimer();
+    }
+
+    public clearUser(): void {
+        localStorage.removeItem(this._sessionTokenKey);
+        localStorage.removeItem(this._sessionTokenExpirationDateKey);
+        localStorage.removeItem(this._loginNameKey);
+        this.permissionService.flushPermissions();
+        this.user$.next(null);
+        this.isLoggedIn$.next(null);
+    }
+
+    public refreshSession(): Observable<void> {
+        return this.tokenRefresh$.asObservable();
+    }
+
+    public getUserAsObservable(): Observable<ISecurityUser | null> {
+        return this.user$.asObservable();
+    }
 }

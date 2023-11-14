@@ -1,0 +1,10 @@
+<div class="card flex-column">
+    <h1>Keress a meglévő oktatók között</h1>
+    <form [formGroup]="filterFg" class="flex-row">
+        <app-input appearance="outline" formControlName="name" label="Név"></app-input>
+        <app-input appearance="outline" formControlName="location" label="Város"></app-input>
+    </form>
+    <div class="button-section">
+        <button mat-raised-button color="primary">KERESÉS</button>
+    </div>
+</div>
