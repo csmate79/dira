@@ -65,6 +65,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SelectComponent } from './components/select/select.component';
 import { WrappingPipe } from './pipes/wrapping.pipe';
 import { EnumToSelectOptionsPipe } from './pipes/enum-to-select-options.pipe';
+import { StarRatingModule } from 'angular-star-rating';
 
 /** Material modulok gyűjtőlistája. */
 const materialModules = [
@@ -118,7 +119,7 @@ const commonModules = [
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
-    SlickCarouselModule
+    SlickCarouselModule,
 ];
 
 /** Privát komponensek gyűjtőlistája (nem kerülnek exportolásra) */
@@ -158,8 +159,8 @@ const pipes = [
 // const externalDirectives = [];
 
 @NgModule({
-    declarations: [...publicComponents, ...pipes, ...directives, AutocompleteComponent],
-    imports: [...commonModules, ...materialModules],
+    declarations: [...publicComponents, ...pipes, ...directives],
+    imports: [...commonModules, ...materialModules, StarRatingModule.forRoot()],
     exports: [
         ...commonModules,
         ...materialModules,

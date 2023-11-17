@@ -3,8 +3,10 @@
 }
 
 nav {
+    display: flex;
+    align-items: flex-end;
     justify-content: space-around;
-    height: 3em;
+    margin: 1em 0;
     #navbar-content {
         flex: 1;
     }
@@ -16,5 +18,11 @@ nav {
         li {
             padding-left: 1em;
         }
+    }
+
+    img {
+        height: 25px;
+        filter: brightness(0) saturate(100%) invert(23%) sepia(53%) saturate(2541%)
+            hue-rotate(245deg) brightness(97%) contrast(93%);
     }
 }

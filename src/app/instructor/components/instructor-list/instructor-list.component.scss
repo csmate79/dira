@@ -5,4 +5,6 @@
 /* the parent */
 .slick-list {
     margin: 0 -5px;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
 }
