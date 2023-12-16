@@ -1,1 +1,26 @@
-<p>registration works!</p>
+<mat-card-content>
+    <form [formGroup]="registrationFg">
+        <app-input
+            matInput
+            formControlName="username"
+            label="Felhasználónév"
+            name="username"
+            required />
+        <br />
+        <app-input
+            matInput
+            formControlName="email"
+            type="email"
+            label="E-mail cím"
+            name="email"
+            required />
+        <br />
+        <app-input
+            matInput
+            formControlName="password"
+            type="password"
+            label="Jelszó"
+            name="password"
+            required />
+    </form>
+</mat-card-content>

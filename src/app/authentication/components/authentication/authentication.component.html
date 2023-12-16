@@ -1,0 +1,17 @@
+<!-- registration.component.html -->
+<mat-card>
+    <mat-card>
+        <mat-tab-group>
+            <mat-tab label="Regisztráció">
+                <app-registration></app-registration>
+            </mat-tab>
+            <mat-tab label="Bejelentkezés">
+                <app-login></app-login>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+    <mat-card-actions>
+        <button mat-raised-button color="primary">Regisztráció</button>
+        <button mat-button (click)="closeDialog()">Mégse</button>
+    </mat-card-actions>
+</mat-card>

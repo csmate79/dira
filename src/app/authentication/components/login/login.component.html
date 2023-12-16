@@ -1,1 +1,19 @@
-<p>login works!</p>
+<mat-card-content>
+    <form [formGroup]="loginFg">
+        <!-- Bejelentkezési űrlap része -->
+        <app-input
+            matInput
+            formControlName="email"
+            label="Felhasználónév"
+            name="loginUsername"
+            required />
+        <br />
+        <app-input
+            matInput
+            formControlName="password"
+            type="password"
+            label="Jelszó"
+            name="loginPassword"
+            required />
+    </form>
+</mat-card-content>
