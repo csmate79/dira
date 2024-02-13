@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthenticationGuard } from '../authentication/guards/authentication.guard';
-import { InstructorCreateComponent } from './components/instructor-create/instructor-create/instructor-create.component';
+import { InstructorCreateComponent } from './components/instructor-create/instructor-create.component';
+import { CommonUrlEnum } from '../shared/enums/url/common-url.enum';
+import { InstructorComponent } from './components/instructor/instructor.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: CommonUrlEnum.NEW,
         component: InstructorCreateComponent,
+        data: {},
+    },
+    {
+        path: `${CommonUrlEnum.SHOW}/:id`,
+        component: InstructorComponent,
         data: {},
     },
 ];

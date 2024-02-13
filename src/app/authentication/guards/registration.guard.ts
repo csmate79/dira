@@ -3,7 +3,7 @@ import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Role } from 'src/app/shared/enums/role.enum';
-import { ModuleUrlEnum } from '../../shared/enums/module-url.enum';
+import { ModuleUrlEnum } from '../../shared/enums/url/module-url.enum';
 import { AuthenticationStateController } from '../controllers/authentication-state.controller';
 
 /**
@@ -14,7 +14,7 @@ import { AuthenticationStateController } from '../controllers/authentication-sta
   providedIn: 'root',
 })
 export class RegistrationGuard implements CanActivate {
-  constructor(private router: Router, private authStateController: AuthenticationStateController) {}
+  constructor(private router: Router, private authStateController: AuthenticationStateController) { }
 
   public canActivate(): Observable<boolean> {
     return this.authStateController.getUserAsObservable().pipe(

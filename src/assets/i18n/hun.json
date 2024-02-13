@@ -1,5 +1,7 @@
 {
     "COMMON": {
+        "REGISTER": "Regisztráció",
+        "LOGIN": "Bejelentkezés",
         "ARROW_LEFT": "<",
         "ARROW_RIGHT": ">",
         "ATTACHED_MEDIA_FILES": "Csatolt fényképek listája",
@@ -68,7 +70,7 @@
         },
         "CAR": {
             "FUEL_TYPE": {
-                "GASOLINE": "Benzin",
+                "PETROL": "Benzin",
                 "DIESEL": "Dízel",
                 "ELECTRIC": "Elektromos"
             }
@@ -107,5 +109,11 @@
             "STRUCTURE_CATEGORY": "Már létezik kategória ezzel a névvel. Adjon meg eltérő megnevezést!"
         },
         "POSITIVE_GREATER_THAN_ZERO": "Csak nullánál nagyobb egész számok"
+    },
+    "NOTIFICATION": {
+        "COMMON": {
+            "SUCCESSFUL_CREATION": "Sikeres létrehozás",
+            "UNSUCCESSFUL_CREATION": "Sikertelen létrehozás"
+        }
     }
 }

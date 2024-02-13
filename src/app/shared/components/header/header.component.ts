@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationController } from 'src/app/authentication/controllers/authentication.controller';
 
 @Component({
@@ -8,9 +9,13 @@ import { AuthenticationController } from 'src/app/authentication/controllers/aut
 })
 export class HeaderComponent {
 
-    constructor(private authenticationController: AuthenticationController) { }
+    constructor(private authenticationController: AuthenticationController, private router: Router) { }
 
     public openRegistrationDialog() {
         this.authenticationController.openRegistrationDialog();
+    }
+
+    public navigateToHome() {
+        this.router.navigate(['']);
     }
 }

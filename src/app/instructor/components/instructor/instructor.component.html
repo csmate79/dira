@@ -1,0 +1,21 @@
+<div class="card instructor-card" *ngIf="instructorData">
+    <div>
+        <p>Neve: {{ instructorData.name }}</p>
+        <p>Város: {{ instructorData.location }}</p>
+        <p>Iskola: {{ instructorData.school }}</p>
+        <p>Autó: {{ instructorData.car }}</p>
+    </div>
+    <div>
+        <p>Ár: 3500FT</p>
+        <p>Oktatiói készségek:</p>
+        <star-rating
+            [starType]="'svg'"
+            [rating]="4.5"
+            [showHalfStars]="true"></star-rating>
+        <p>Személyiségjegyek:</p>
+        <star-rating
+            [starType]="'svg'"
+            [rating]="2.63"
+            [showHalfStars]="true"></star-rating>
+    </div>
+</div>

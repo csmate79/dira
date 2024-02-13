@@ -55,6 +55,6 @@
     </form>
     <app-button
         title="COMMON.SAVE"
-        [disabled]="!instructorForm.valid"
-        (click)="saveInstructor()"></app-button>
+        [disabled]="!instructorForm.valid && false"
+        (btnOnClick)="saveInstructor()"></app-button>
 </div>

@@ -14,7 +14,7 @@ export class InstructorService extends ApiService {
      * Instruktor adatainak lekérése ID alapján
      */
     public getInstructor(id: string): Observable<IInstructorData> {
-        return super.get(id);
+        return super.get(`/${id}`);
     }
 
     /**

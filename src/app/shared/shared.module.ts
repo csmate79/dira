@@ -58,14 +58,14 @@ import { InputComponent } from './components/input/input.component';
 import { MaskConfigDirective } from './directives/mask-config.directive';
 import { PartnerCardComponent } from './components/partner-card/partner-card.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
-import { InstructorListComponent } from '../instructor/components/instructor-list/instructor-list.component';
-import { InstructorCardComponent } from '../instructor/components/instructor-card/instructor-card/instructor-card.component';
+import { InstructorSlideListComponent } from '../instructor/components/instructor-slide-list/instructor-slide-list.component';
+import { InstructorCardComponent } from '../instructor/components/instructor-card/instructor-card.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SelectComponent } from './components/select/select.component';
 import { WrappingPipe } from './pipes/wrapping.pipe';
 import { EnumToSelectOptionsPipe } from './pipes/enum-to-select-options.pipe';
-import { StarRatingModule } from 'angular-star-rating';
+import { StarRating, StarRatingModule } from 'angular-star-rating';
 
 /** Material modulok gyűjtőlistája. */
 const materialModules = [
@@ -120,6 +120,7 @@ const commonModules = [
     RouterModule,
     CommonModule,
     SlickCarouselModule,
+    StarRatingModule
 ];
 
 /** Privát komponensek gyűjtőlistája (nem kerülnek exportolásra) */
@@ -134,7 +135,7 @@ const publicComponents = [
     InputComponent,
     PartnerCardComponent,
     AutocompleteComponent,
-    InstructorListComponent,
+    InstructorSlideListComponent,
     InstructorCardComponent,
     ButtonComponent,
     SelectComponent

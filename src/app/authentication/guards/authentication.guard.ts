@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { NotificationController } from 'src/app/shared/controllers/notification.controller';
 import { NotificationType } from 'src/app/shared/enums/notification-type.enum';
-import { ModuleUrlEnum } from '../../shared/enums/module-url.enum';
+import { ModuleUrlEnum } from '../../shared/enums/url/module-url.enum';
 import { AuthenticationStateController } from '../controllers/authentication-state.controller';
 
 /**
@@ -19,7 +19,7 @@ export class AuthenticationGuard implements CanActivate {
     private router: Router,
     private authStateController: AuthenticationStateController,
     private notificationController: NotificationController,
-  ) {}
+  ) { }
 
   public canActivate():
     | boolean

@@ -20,3 +20,14 @@ form {
     font-weight: 900 !important;
     color: #d8d6d6 !important;
 }
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 800px) {
+    .inputs {
+        flex-direction: column;
+    }
+}

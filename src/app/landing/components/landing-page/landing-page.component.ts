@@ -6,8 +6,9 @@ import { tap } from 'rxjs/operators';
 import { PartnerType } from 'src/app/shared/enums/partner-type.enum';
 import { Right } from '../../../shared/enums/right.enum';
 import { ISecurityUser } from '../../../authentication/interfaces/security-user.interface';
-import { ModuleUrlEnum } from '../../../shared/enums/module-url.enum';
+import { ModuleUrlEnum } from '../../../shared/enums/url/module-url.enum';
 import { LandingUrlEnum } from '../../enums/landing-url.enum';
+import { CommonUrlEnum } from 'src/app/shared/enums/url/common-url.enum';
 
 @Component({
     selector: 'app-landing-page',
@@ -41,6 +42,6 @@ export class LandingPageComponent implements OnInit {
 
     public navigateToInstructorCreation(): void {
         console.log('asdasd');
-        this.router.navigate([ModuleUrlEnum.CREATE_NEW_INSTRUCTOR]);
+        this.router.navigate([`${ModuleUrlEnum.INSTRUCTOR}/${CommonUrlEnum.NEW}`]);
     }
 }

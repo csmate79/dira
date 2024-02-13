@@ -1,7 +1,10 @@
 <div>
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let instructor of instructorList | async" class="slide">
-            <app-instructor-card [instructorData]="instructor"></app-instructor-card>
+            <app-instructor-card
+                [instructorData]="instructor"
+                (click)="navigateToInstructor(instructor)"
+                class="instructor-card"></app-instructor-card>
         </div>
     </ngx-slick-carousel>
 </div>

@@ -1,6 +1,10 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '../node_modules/css-star-rating/scss/star-rating.scss';
 
+// Plus imports for other components in your app.
+
+@import 'variables';
+
 /* You can add global styles to this file, and also import other style files */
 
 html,
@@ -49,6 +53,35 @@ button {
 
 .full-width {
     width: 100% !important;
+}
+
+// SNACKBAR
+.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: none;
+}
+
+.mat-mdc-snack-bar-label {
+    padding: 0 !important;
+}
+
+.snackbar-notification {
+    &.error {
+        --mdc-snackbar-container-color: $warn;
+
+        background-color: $warn;
+    }
+
+    &.warning {
+        --mdc-snackbar-container-color: $warn;
+
+        background-color: $accent;
+    }
+
+    &.success {
+        --mdc-snackbar-container-color: $primary;
+
+        background-color: $primary;
+    }
 }
 
 // RESET CSS

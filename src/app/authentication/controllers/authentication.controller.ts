@@ -13,7 +13,7 @@ import { IRegistrationRequest } from '../dtos/registration-request.dto';
 import { ValidationDataType } from '../enums/validation-data-type.enum';
 import { AuthenticationService } from '../services/authentication.service';
 import { ISecurityUser } from '../interfaces/security-user.interface';
-import { ModuleUrlEnum } from '../../shared/enums/module-url.enum';
+import { ModuleUrlEnum } from '../../shared/enums/url/module-url.enum';
 import { PartnerType } from '../../shared/enums/partner-type.enum';
 import { AuthenticationStateController } from './authentication-state.controller';
 import { ActivationService } from '../services/activation.service';
