@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { AuthenticationStateController } from 'src/app/authentication/controllers/authentication-state.controller';
-import { ModuleUrlEnum } from 'src/app/shared/enums/module-url.enum';
+import { ModuleUrlEnum } from 'src/app/shared/enums/url/module-url.enum';
 import { IHttpErrorResponse } from 'src/app/shared/interfaces/http-error-response.interface';
 import { NotificationController } from '../../shared/controllers/notification.controller';
 import { NotificationType } from '../../shared/enums/notification-type.enum';

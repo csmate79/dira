@@ -4,7 +4,7 @@ import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NotificationController } from 'src/app/shared/controllers/notification.controller';
 import { NgxPermissionsService } from 'ngx-permissions';
-import { ModuleUrlEnum } from '../../shared/enums/module-url.enum';
+import { ModuleUrlEnum } from '../../shared/enums/url/module-url.enum';
 import { NotificationType } from '../../shared/enums/notification-type.enum';
 
 /**
@@ -19,7 +19,7 @@ export class HasRightGuard implements CanActivate {
     private router: Router,
     private notificationController: NotificationController,
     private ngxPermissionsService: NgxPermissionsService,
-  ) {}
+  ) { }
 
   public canActivate(
     route: ActivatedRouteSnapshot,

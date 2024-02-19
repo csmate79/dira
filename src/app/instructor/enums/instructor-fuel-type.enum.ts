@@ -1,5 +1,5 @@
 export enum InstructorCarType {
-    GASOLINE = 'GASOLINE',
+    PETROL = 'PETROL',
     DIESEL = 'DIESEL',
     ELECTRIC = 'ELECTRIC'
 }

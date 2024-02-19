@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleUrlEnum } from './shared/enums/module-url.enum';
+import { ModuleUrlEnum } from './shared/enums/url/module-url.enum';
 
 const lazyImports = {
     Landing: () => import('./landing/landing.module').then((module) => module.LandingModule),
@@ -16,7 +16,7 @@ const routes: Routes = [
         data: {},
     },
     {
-        path: ModuleUrlEnum.CREATE_NEW_INSTRUCTOR,
+        path: ModuleUrlEnum.INSTRUCTOR,
         loadChildren: lazyImports.Instructor,
         data: {},
     },

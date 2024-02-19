@@ -15,6 +15,7 @@ const baseUrl = 'http://localhost';
 export const environment: IEnvironment = {
     serviceUrls: {
         instructor: `${baseUrl}:8080/instructor`,
+        rating: `${baseUrl}:8080/rating`,
     },
     appVersion: '0',
     contactData: {

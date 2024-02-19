@@ -1,5 +1,5 @@
 .slick-slide {
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 /* the parent */
@@ -7,4 +7,8 @@
     margin: 0 -5px;
     overflow-x: clip !important;
     overflow-y: visible !important;
+}
+
+.instructor-card {
+    cursor: pointer;
 }

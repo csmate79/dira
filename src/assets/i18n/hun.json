@@ -1,5 +1,8 @@
 {
     "COMMON": {
+        "INSTRUCTOR": "Oktató",
+        "REGISTER": "Regisztráció",
+        "LOGIN": "Bejelentkezés",
         "ARROW_LEFT": "<",
         "ARROW_RIGHT": ">",
         "ATTACHED_MEDIA_FILES": "Csatolt fényképek listája",
@@ -11,6 +14,7 @@
         "NEXT": "Következő",
         "SHOW": "Megtekintés",
         "EDIT": "Szerkesztés",
+        "CREATE": "Létrehozás",
         "SHOW_EDIT": "Megtekintés/Szerkesztés",
         "DELETE": "Törlés",
         "RESET": "Visszaállítás",
@@ -62,13 +66,17 @@
             "SCHOOL": "Iskola"
         },
         "NEW_INSTRUCTOR": "+ ÚJ OKTATÓ FELVÉTELE",
+        "REVIEW": {
+            "CREATE_NEW_REVIEW": "Új értékelés létrehozása",
+            "CANCEL_CREATE_NEW_REVIEW": "Megszakítása"
+        },
         "AGE": {
             "OLD": "Idős",
             "YOUNG": "Fiatal"
         },
         "CAR": {
             "FUEL_TYPE": {
-                "GASOLINE": "Benzin",
+                "PETROL": "Benzin",
                 "DIESEL": "Dízel",
                 "ELECTRIC": "Elektromos"
             }
@@ -107,5 +115,11 @@
             "STRUCTURE_CATEGORY": "Már létezik kategória ezzel a névvel. Adjon meg eltérő megnevezést!"
         },
         "POSITIVE_GREATER_THAN_ZERO": "Csak nullánál nagyobb egész számok"
+    },
+    "NOTIFICATION": {
+        "COMMON": {
+            "SUCCESSFUL_CREATION": "Sikeres létrehozás",
+            "UNSUCCESSFUL_CREATION": "Sikertelen létrehozás"
+        }
     }
 }

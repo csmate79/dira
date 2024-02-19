@@ -1,0 +1,15 @@
+<!-- registration.component.html -->
+<mat-card>
+    <mat-tab-group>
+        <mat-tab [label]="'COMMON.REGISTER' | translate">
+            <app-registration></app-registration>
+        </mat-tab>
+        <mat-tab [label]="'COMMON.LOGIN' | translate">
+            <app-login></app-login>
+        </mat-tab>
+    </mat-tab-group>
+    <mat-card-actions class="buttons">
+        <button mat-button (click)="closeDialog()">{{ 'COMMON.CANCEL' | translate }}</button>
+        <button mat-raised-button color="primary">{{ 'COMMON.REGISTER' | translate }}</button>
+    </mat-card-actions>
+</mat-card>

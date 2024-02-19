@@ -5,7 +5,7 @@ import { SERVICE_URL } from 'src/app/shared/utils/service-url';
 import { IInstructorData } from '../interfaces/instructor.interface';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class InstructorService extends ApiService {
     protected serviceUrl = `${SERVICE_URL.INSTRUCTOR}`;
@@ -14,16 +14,14 @@ export class InstructorService extends ApiService {
      * Instruktor adatainak lekérése ID alapján
      */
     public getInstructor(id: string): Observable<IInstructorData> {
-        return super.get(id);
+        return super.get(`/${id}`);
     }
 
     /**
      * Összes instruktor lekérdezése
      */
     public getInstructorList(): Observable<IInstructorData[]> {
-        return super.get('').pipe(
-            map((res: any) => [...res.instructors])
-        );
+        return super.get('').pipe(map((res: any) => [...res.instructors]));
     }
 
     /**
