@@ -1,5 +1,6 @@
 {
     "COMMON": {
+        "INSTRUCTOR": "Oktató",
         "REGISTER": "Regisztráció",
         "LOGIN": "Bejelentkezés",
         "ARROW_LEFT": "<",
@@ -13,6 +14,7 @@
         "NEXT": "Következő",
         "SHOW": "Megtekintés",
         "EDIT": "Szerkesztés",
+        "CREATE": "Létrehozás",
         "SHOW_EDIT": "Megtekintés/Szerkesztés",
         "DELETE": "Törlés",
         "RESET": "Visszaállítás",
@@ -64,6 +66,10 @@
             "SCHOOL": "Iskola"
         },
         "NEW_INSTRUCTOR": "+ ÚJ OKTATÓ FELVÉTELE",
+        "REVIEW": {
+            "CREATE_NEW_REVIEW": "Új értékelés létrehozása",
+            "CANCEL_CREATE_NEW_REVIEW": "Megszakítása"
+        },
         "AGE": {
             "OLD": "Idős",
             "YOUNG": "Fiatal"

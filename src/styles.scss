@@ -1,5 +1,8 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '../node_modules/css-star-rating/scss/star-rating.scss';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 // Plus imports for other components in your app.
 
@@ -208,3 +211,101 @@ a {
     text-decoration: none;
 }
 // RESET CSS
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    // Changing the body here
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        font-family: sans-serif;
+        font-size: 18px;
+    }
+}
+
+// FLEX OPTIONS
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// FLEX OPTIONS
+
+button {
+    font-weight: 900 !important;
+    font-size: 12px !important;
+}
+
+.card {
+    background-color: #f6f6f6;
+    display: flex;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px -5px rgba(0, 0, 0, 0.19);
+}
+
+.slick-list {
+    overflow-y: visible !important;
+    overflow-x: clip !important;
+}
+
+.slick-arrow::before {
+    color: #673ab7 !important;
+}
+
+// CUSTOM CLASSES
+
+.full-width {
+    width: 100% !important;
+}
+
+// SNACKBAR
+.mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: none;
+}
+
+.mat-mdc-snack-bar-label {
+    padding: 0 !important;
+}
+
+.snackbar-notification {
+    &.error {
+        --mdc-snackbar-container-color: $warn;
+
+        background-color: $warn;
+    }
+
+    &.warning {
+        --mdc-snackbar-container-color: $warn;
+
+        background-color: $accent;
+    }
+
+    &.success {
+        --mdc-snackbar-container-color: $primary;
+
+        background-color: $primary;
+    }
+}
+
+.rating {
+    justify-content: space-between !important;
+}

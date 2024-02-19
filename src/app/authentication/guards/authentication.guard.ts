@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, UrlTree } from '@angular/router';
+import { Router, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { NotificationController } from 'src/app/shared/controllers/notification.controller';
@@ -14,7 +14,7 @@ import { AuthenticationStateController } from '../controllers/authentication-sta
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationGuard implements CanActivate {
+export class AuthenticationGuard  {
   constructor(
     private router: Router,
     private authStateController: AuthenticationStateController,

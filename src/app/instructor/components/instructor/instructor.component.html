@@ -1,21 +1,113 @@
-<div class="card instructor-card" *ngIf="instructorData">
-    <div>
-        <p>Neve: {{ instructorData.name }}</p>
-        <p>Város: {{ instructorData.location }}</p>
-        <p>Iskola: {{ instructorData.school }}</p>
-        <p>Autó: {{ instructorData.car }}</p>
+<div class="flex lg:flex-row flex-col gap-5">
+    <div class="card flex-col grow" *ngIf="instructorData">
+        <div class="mb-10">
+            <h2 class="flex text-3xl font-bold justify-center">
+                {{ instructorData.name }}
+            </h2>
+        </div>
+        <div class="flex md:flex-row flex-col justify-around">
+            <div class="grid gap-5">
+                <p class="flex items-center">
+                    <mat-icon class="mr-5">home</mat-icon>
+                    {{ instructorData.location }}
+                </p>
+                <p class="flex items-center">
+                    <mat-icon class="mr-5">school</mat-icon>
+                    {{ instructorData.school }}
+                </p>
+                <p class="flex items-center">
+                    <mat-icon class="mr-5">directions_car</mat-icon>
+                    {{ instructorData.car }}
+                </p>
+            </div>
+            <div class="review-infos grid gap-5 md:mt-0 mt-10">
+                <div class="grid gap-5 flex justify-center">
+                    <p class="flex items-center">
+                        <mat-icon class="mr-5">attach_money</mat-icon>
+                        3500FT
+                    </p>
+                    <star-rating
+                        [readOnly]="true"
+                        labelText="Oktatiói készségek "
+                        [starType]="'svg'"
+                        [rating]="4.5"
+                        [showHalfStars]="true"></star-rating>
+                    <star-rating
+                        [readOnly]="true"
+                        labelText="Személyiségjegyek "
+                        [starType]="'svg'"
+                        [rating]="2.63"
+                        [showHalfStars]="true"></star-rating>
+                </div>
+                <button
+                    mat-raised-button
+                    [color]="!showCreatingSection() ? 'primary' : 'warn'"
+                    (click)="newReview()">
+                    {{
+                        (!showCreatingSection()
+                            ? 'INSTRUCTOR.REVIEW.CREATE_NEW_REVIEW'
+                            : 'INSTRUCTOR.REVIEW.CANCEL_CREATE_NEW_REVIEW'
+                        ) | translate
+                    }}
+                </button>
+            </div>
+        </div>
     </div>
-    <div>
-        <p>Ár: 3500FT</p>
-        <p>Oktatiói készségek:</p>
+    <div
+        class="card flex flex-col justify-around overflow-hidden"
+        [@inOutAnimationDesktop]
+        *ngIf="showCreatingSection() && !isMobile">
+        <div [formGroup]="reviewFg">
+            <app-input
+                label="Ár (Ft / 1 óra)"
+                type="number"
+                formControlName="tariff"></app-input>
+        </div>
         <star-rating
+            labelText="Oktatiói készségek:"
             [starType]="'svg'"
-            [rating]="4.5"
-            [showHalfStars]="true"></star-rating>
-        <p>Személyiségjegyek:</p>
+            [showHalfStars]="true"
+            (starClickChange)="onClickInstructorSkills($event)"></star-rating>
         <star-rating
+            labelText="Személyiségjegyek:"
             [starType]="'svg'"
-            [rating]="2.63"
-            [showHalfStars]="true"></star-rating>
+            [showHalfStars]="true"
+            (starClickChange)="onClickPersonality($event)"></star-rating>
+        <button
+            class="mt-5"
+            mat-raised-button
+            color="secondary"
+            (click)="createNewReview()">
+            {{ 'COMMON.CREATE' | translate }}
+        </button>
+    </div>
+    <div
+        class="card flex flex-col justify-around overflow-hidden"
+        [@inOutAnimationMobile]
+        *ngIf="showCreatingSection() && isMobile">
+        <div [formGroup]="reviewFg">
+            <app-input
+                label="Ár (Ft / 1 óra)"
+                type="number"
+                required
+                formControlName="tariff"></app-input>
+        </div>
+        <star-rating
+            labelText="Oktatiói készségek:"
+            [starType]="'svg'"
+            [showHalfStars]="true"
+            (starClickChange)="onClickInstructorSkills($event)"></star-rating>
+        <star-rating
+            labelText="Személyiségjegyek:"
+            [starType]="'svg'"
+            [showHalfStars]="true"
+            (starClickChange)="onClickPersonality($event)"></star-rating>
+        <button
+            class="mt-5"
+            mat-raised-button
+            color="secondary"
+            (click)="createNewReview()">
+            {{ 'COMMON.CREATE' | translate }}
+        </button>
     </div>
 </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Role } from 'src/app/shared/enums/role.enum';
@@ -13,7 +13,7 @@ import { AuthenticationStateController } from '../controllers/authentication-sta
 @Injectable({
   providedIn: 'root',
 })
-export class RegistrationGuard implements CanActivate {
+export class RegistrationGuard  {
   constructor(private router: Router, private authStateController: AuthenticationStateController) { }
 
   public canActivate(): Observable<boolean> {
