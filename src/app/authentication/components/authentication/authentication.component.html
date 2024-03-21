@@ -1,15 +1,36 @@
 <!-- registration.component.html -->
 <mat-card>
-    <mat-tab-group>
+    <mat-tab-group (selectedTabChange)="tabChange($event)">
         <mat-tab [label]="'COMMON.REGISTER' | translate">
-            <app-registration></app-registration>
+            <div class="p-8">
+                <app-registration></app-registration>
+            </div>
         </mat-tab>
         <mat-tab [label]="'COMMON.LOGIN' | translate">
-            <app-login></app-login>
+            <div class="p-8">
+                <app-login></app-login>
+            </div>
         </mat-tab>
     </mat-tab-group>
-    <mat-card-actions class="buttons">
-        <button mat-button (click)="closeDialog()">{{ 'COMMON.CANCEL' | translate }}</button>
-        <button mat-raised-button color="primary">{{ 'COMMON.REGISTER' | translate }}</button>
+    <mat-card-actions class="!p-0">
+        <div class="flex flex-col-reverse justify-center w-full">
+            <button
+                mat-button
+                (click)="closeDialog()"
+                class="!rounded-none !h-12">
+                {{ 'COMMON.CANCEL' | translate }}
+            </button>
+            <button
+                mat-raised-button
+                color="primary"
+                class="!rounded-none !h-12">
+                {{
+                    (selectedTabIndex === 0
+                        ? 'COMMON.REGISTER'
+                        : 'COMMON.LOGIN'
+                    ) | translate
+                }}
+            </button>
+        </div>
     </mat-card-actions>
 </mat-card>
